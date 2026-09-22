@@ -21,6 +21,9 @@ ENV PYTHONUNBUFFERED=1
 
 WORKDIR /app
 
+# Install build dependencies for numpy
+RUN apt-get update && apt-get install -y build-essential && rm -rf /var/lib/apt/lists/*
+
 # Create non-privileged user
 ARG UID=10001
 RUN adduser \
