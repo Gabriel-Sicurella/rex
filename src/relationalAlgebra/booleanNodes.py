@@ -15,12 +15,7 @@ def addQuotesIfNeeded(string):
 
 # Determines whether a given string is numeric
 def isRealNumber(string):
-    try:
-        # Use numpy.char for numpy 2.0+ compatibility
-        return np.char.isnumeric(string.replace('.', '', 1))
-    except AttributeError:
-        # Fallback for older numpy versions
-        return np.core.defchararray.isnumeric(string.replace('.', '', 1))
+    return np.core.defchararray.isnumeric(string.replace('.', '', 1))
 
 
 # Add quotes if not a number or boolean
